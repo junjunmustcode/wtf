@@ -1,0 +1,520 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #ffffff;
+    padding: .8rem 0;
+    text-align: center;
+}
+
+.icon-contactels {
+    position: relative;
+    top: 60px; /* Space from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 50px 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    margin-top: 120px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.icon-contactels:hover {
+    transform: translateX(-50%) scale(1.1); /* Smooth scaling on hover */
+    background-color: #ffffff;
+}
+
+.icon-contactels ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.icon-contactels ul li {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3c3c3c;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icon-contactels ul li i {
+    font-size: 24px;
+    color: #fff;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.icon-contactels ul li:hover {
+    transform: scale(1.1); /* Slight scale on hover */
+    background-color: #000000; /* Change background color on hover */
+}
+
+.icon-contactels ul li:hover i {
+    color: #fff; /* Icon color stays white on hover */
+}
+
+/* Active state for list items */
+.icon-contactels ul li.active {
+    background-color: #ff9800;
+    transform: scale(1.1); /* Slight scale effect when active */
+}
+
+.icon-contactels ul li.active i {
+    color: #fff;
+}
+
+/* Tooltip Styling */
+.tooltop {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltop .tooltop-text {
+    visibility: hidden;
+    width: 80px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    top: 150%; /* Position the tooltip below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0s ease 0.3s; /* Smooth visibility change */
+    font-size: 12px;
+    z-index: 1;
+}
+
+.tooltop:hover .tooltop-text {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease; /* Ensure tooltip fades in smoothly */
+}
+
+/* Arrow above the tooltip */
+.tooltop .tooltop-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* Position at the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+
+
+.icon-navbar {
+    position: fixed;
+    top: 10px; /* Space from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c2c2c;
+    border-radius: 12px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.icon-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.icon-navbar ul li {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3c3c3c;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icon-navbar ul li:hover {
+    transform: scale(1.1);
+    background-color: #000000;
+}
+
+.icon-navbar ul li i {
+    font-size: 24px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.icon-navbar ul li:hover i {
+    color: #fff;
+}
+
+/* Scroll Highlight */
+.icon-navbar ul li.active {
+    background-color: #ff9800   ;
+    transform: scale(1.1);
+}
+
+.icon-navbar ul li.active i {
+    color: #fff;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 80px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    top: 150%; /* Position the tooltip below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Arrow above the tooltip */
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* Position at the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.section {
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: start;
+}
+
+#profile {
+    background-color: #000000;
+    background-size: 100% 100%;
+    background-position: center;
+    padding: 40px;
+    color: rgb(0, 0, 0);
+    margin-top: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.next-text{
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+#about-me{
+    color: rgb(255, 255, 255);
+    padding: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70em  
+}
+
+.name-ko{
+    text-align: center;
+    font-size: 50;
+    margin-top: -100px;
+    padding-left: 206px;
+}
+
+.me-ako{    
+    font-size: 100px;
+    margin-left: -100px;
+    margin-top: 0;
+}
+
+.me-two{
+    font-size: 100px;
+    color: rgb(255, 255, 255);
+    margin-top: 0;
+}
+
+#project .project-card {
+    margin: 1rem 0;
+    padding: 3.8rem;
+    border-radius: 8px; 
+    backdrop-filter: blur(5px); 
+    background-color: rgba(255, 255, 255, 1);  
+    box-shadow: 5px 5px 20px 0px rgb(92, 90, 90), inset -8px -8px 16px 0px rgb(92, 90, 90), inset 0px 11px 28px 0px rgb(255, 255, 255);
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+}
+
+#project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: rgb(92, 90, 90);
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+#footer-contact{
+    margin-top: 399px;
+    margin-bottom: 0px;
+}
+
+
+img{
+    height: 250px;
+    width: 250px; 
+    float: left;
+    margin-top: -15px;
+}
+
+.image2{
+    height: 35px;
+    width: 35px;
+    margin-left: 348px;
+}
+#skills {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 3rem auto;
+    max-width: 1000px; /* Adjust max-width for better layout */
+}
+
+#skills h2 {
+    font-size: 2rem;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns layout (each column for skill+image) */
+    gap: 2rem; /* Space between columns */
+    justify-items: center; /* Align items centrally in each grid item */
+}
+
+.skill {
+    display: flex;
+    align-items: center; /* Align the progress bar and image horizontally */
+    justify-content: flex-start; /* Keep the progress bar and image on the left */
+    text-align: left;
+    width: 100%; /* Ensure the skill container takes up full column width */
+    gap: 1rem; /* Space between the progress bar and the image */
+}
+
+.skill h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-grow: 1; /* Ensure progress bar takes up remaining space */
+}
+
+.progress {
+    height: 100%;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.image2 {
+    max-width: 60px; /* Adjust size for better alignment */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    height: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #000000;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.progress-bar .progress {
+    text-align: center;
+    color: white;
+    line-height: 10px;
+    border-radius: 10px;
+}
+
+.skill:hover .progress {
+    background-color: #585858;
+}
+
+#welcome{
+    margin-top: 40px;
+    float: right;
+}
+@media screen and (max-width: 768px) {
+    /* Adjust the About Me section */
+    #about-me {
+        width: 100%; /* Full width to make it responsive */
+        margin: 0;
+        padding: 20px; /* Add some padding for spacing */
+        text-align: center; /* Center the text */
+    }
+
+    /* Center name-ko and adjust font size */
+    .name-ko {
+        font-size: 18px;
+        padding-top: 100px; /* Adjust the top padding */
+        margin-right: 0; /* Remove the right margin to center it */
+        text-align: center; /* Center the text */
+        margin-left: -200px; /* Auto margin to ensure centering */
+        margin-right: 5px; /* Auto margin to ensure centering */
+    }
+
+    /* Center me-ako and me-two classes */
+    .me-ako,
+    .me-two {
+        font-size: 60px; /* Set a smaller font size for smaller screens */
+        text-align: center; /* Center the text */
+        padding-right: 0; /* Remove negative padding */
+        margin-left: auto; /* Auto margin to center horizontally */
+        margin-right: auto; /* Auto margin to center horizontally */
+    }
+
+    /* Center next-text and adjust font size */
+    .next-text {
+        font-size: 12px; /* Adjust font size to make it readable */
+        margin: 10px;
+        text-align: center; /* Center the text */
+    }
+
+    /* Make the profile section more responsive */
+    #profile {
+        padding: 80px;
+        background-size: cover; /* Ensure background image covers the whole container */
+        margin-top: 10px;
+    }
+
+    /* For the icon-contactels, adjust padding and layout */
+    .icon-contactels {
+        padding: 30px;
+        top: 50px; /* Adjust positioning */
+        margin-top: 50px; /* Reduce margin */
+    }
+
+    .icon-contactels ul li {
+        width: 120px;
+        height: 120px;
+        font-size: 18px; /* Smaller icons */
+    }
+
+    /* For the icon-navbar */
+    .icon-navbar {
+        padding: 5px 10px;
+        top: 5px;
+    }
+    
+    .icon-navbar ul li {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Adjust skill section layout */
+    .skills-container {
+        grid-template-columns: 1fr; /* Stack the skill items vertically on small screens */
+    }
+
+    .skill {
+        flex-direction: column; /* Stack progress bar and image vertically */
+        align-items: center;
+    }
+
+    .progress-bar {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+
+    /* Make the project cards responsive */
+    #project .project-card {
+        padding: 2rem; /* Reduce padding */
+    }
+
+    /* Make the footer text fit better */
+    footer {
+        font-size: 12px; /* Reduce font size for mobile */
+    }
+
+    /* Adjust image sizes for mobile */
+    img {
+        height: 180px;
+        width: 180px;
+        margin-top: 10px; ;/* Adjust margin */
+        margin-left: 70px;
+    }
+
+    .image2 {
+        height: 25px;
+        width: 25px;
+    }
+
+    /* For welcome section */
+    #welcome {
+        margin-top: 10px;
+    }
+}   
